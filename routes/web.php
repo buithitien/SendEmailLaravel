@@ -33,6 +33,9 @@ Route::get('/about', [PageController::class, 'getAbout']);
 // ----------------- CART ---------------
 Route::get('add-to-cart/{id}', [PageController::class, 'getAddToCart'])->name('themgiohang');
 Route::get('del-cart/{id}', [PageController::class, 'getDelItemCart'])->name('xoagiohang');
+
+
+
 // ----------------- CHECKOUT ---------------
 Route::get('check-out', [PageController::class, 'getCheckout'])->name('dathang');
 Route::post('check-out', [PageController::class, 'postCheckout'])->name('dathang');

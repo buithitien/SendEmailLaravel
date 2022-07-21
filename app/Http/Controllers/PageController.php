@@ -131,6 +131,7 @@ class PageController extends Controller
     public function getAddToCart(Request $req, $id)
     {
         if (Session::has('user')) {
+            // Select*form id
             if (Product::find($id)) {
                 $product = Product::find($id);
                 $oldCart = Session('cart') ? Session::get('cart') : null;
@@ -157,6 +158,10 @@ class PageController extends Controller
         }
         return redirect()->back();
     }
+
+
+
+
     // ------------------------ CHECKOUT -------------------
     public function getCheckout()
     {
@@ -296,4 +301,6 @@ class PageController extends Controller
         $pdf = PDF::loadView('PDF.exportProduct', compact('products'))->setPaper('a4', 'portrait');
         return $pdf->download('products.pdf');
     }
+    
+    
 }
