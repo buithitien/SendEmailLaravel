@@ -48,7 +48,7 @@ Route::post('/admin-edit', [PageController::class, 'postAdminEdit']);
 Route::post('/admin-delete/{id}', [PageController::class, 'postAdminDelete']);
 
 Route::get('/admin-export', [PageController::class, 'exportAdminProduct'])->name('export');
-
+// VNpay
 Route::get('/return-vnpay', function () {
     return view('vnpay.return-vnpay');
 });
